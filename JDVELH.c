@@ -1,4 +1,3 @@
-@@ -1,4 +1,58 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -19,15 +18,6 @@ struct Chapitre{
 typedef struct Chapitre chapter;
 
 
-int deplacement(chapitre_joueur, chapter){
-	printf("tu veux aller ou?\n");
-	scanf("%d", &choix)
-	switch(choix){
-		case 1:
-
-
-	}
-}
 
 int main(){
 
@@ -36,7 +26,7 @@ int main(){
 	int pv = 100;
 
 	chapter chapitre1 = {"Devant le chateau", 0, 0, 0};
-	chapter chapitre2 = {"Entre du chateau", 0, 0, 0};
+	chapter chapitre2 = {"Entree du chateau", 0, 0, 0};
 	chapter chapitre3 = {"Dans le HALL", 0, 0, 0};
 
 	int choix = 0;
@@ -48,7 +38,15 @@ int main(){
 
 	switch(choix){
 		case 1:
-			printf("%s\n", deplacement);
+			printf("Yes, tu es entre dans le chateau. Vers quelle piece veux-tu aller?\n[1] Entree du chateau\n[2] Hall du chateau");
+			scanf("%d", &choix);
+			switch(choix){
+				case 1:
+				printf("%s\n", chapitre2.desc);
+				break;
+				case 2:
+				printf("%s\n", chapitre3.desc);
+			}
 		break;
 		case 2:
 			printf("Tu tombe dans un piege. Malheureusement tu meurs\n");
